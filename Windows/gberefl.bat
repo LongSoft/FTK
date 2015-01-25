@@ -3,7 +3,7 @@ pushd %~dp0
 if not exist bios.bin goto ERR_BNF
 echo Creating BIOS backup.
 if exist backup.bin del backup.bin
-fpt -d backup.bin
+fptw -d backup.bin
 if errorlevel 1 goto ERR_BCK
 echo Copying GbE MAC address from BIOS backup to bios.bin.
 fd44cpr -gn backup.bin bios.bin
